@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>myG Store</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .custom-nav {
+      background-color: black;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .custom-nav span {
+      color: orange;
+      font-size: 35px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    .custom-nav input[type="search"] {
+      padding: 10px;
+      border-radius: 5px;
+      width: 50%;
+      max-width: 400px;
+      border: none;
+    }
+
+    nav {
+      background-color:black;
+      padding: 1em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      gap: 10px;
+    }
+
+@media (max-width: 576px) {
+  .custom-nav span {
+    font-size: 28px;
+  }
+
+  .custom-nav input[type="search"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .custom-nav i {
+    font-size: 20px;
+  }
+}
+
+
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-button {
+      background-color: black;
+      color: rgb(249, 243, 243);
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #0f0e0e;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #eedada;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .store-locator {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #060404;
+    }
+
+    .store-locator input,
+    .store-locator select {
+      margin: 5px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+
+    .search-btn {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    /* Add some basic styling to our images */
+		img {
+			width: 300%;
+			height: auto;
+			margin: 50px;
+		}
+		
+		/* Create a container for our scrollable images */
+		.scrollable-images {
+			overflow-x: auto;
+      white-space: nowrap;
+		}
+		
+		/* Style our scrollable images container */
+		.scrollable-images img {
+			display: inline-block;
+			width: 600px;
+			height: 300px; 
+			margin: 10px;
+		}
+/* Filter Container */
+.filter-container {
+  width: 10%;
+  margin-left: 0;
+  padding: 20px;
+  background-color: #054b92;
+  border: 1px solid #140b0b;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Price Filter */
+.price-filter {
+  margin-bottom: 20px;
+}
+
+.price-filter h2 {
+  margin-top: 0;
+}
+
+.price-filter input[type="range"] {
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #620303;
+  outline: none;
+}
+
+.price-filter span {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Brand Filter */
+.brand-filter {
+  margin-bottom: 10px;
+}
+
+.brand-filter h2 {
+  margin-top: 0;
+}
+
+.brand-filter input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.brand-filter label {
+  font-weight: 20;
+}
+ .dropdown-button {
+      background-color: black;
+      color: rgb(227, 211, 211);
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #e3dbe7;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      color: #060404;
+    }
+
+  
+
+    /* Branding & Search */
+    
+    /* Carousel */
+    
+
+
+
+
+.carousel-container {
+      overflow: hidden;
+      width:100%;
+      max-width: 1500px;
+      margin: 40px auto;
+      padding: 0 10px;
+    }
+
+    .image-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .image-track img {
+      width: 600px;
+      height: 300px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .image-track img {
+        width: 90vw;
+        height: auto;
+      }
+
+     
+    }
+.image-trac img{
+    width: 1000px;
+      height: 200px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 10px;
+      margin-right: 10px;
+      transform: scale(1.03);
+}
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Filter Container */
+.filter-container {
+  width: 65px;
+  min-width: 200px;
+  background-color: #054b92;
+  border: 1px solid #140b0b;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Section */
+.product-section {
+  flex: 1;
+  padding: 0 20px;
+}
+    /* Cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 5px;
+    }
+
+    .card {
+      background-color: rgb(21, 16, 16);
+      border-radius: 10px;
+      overflow: hidden;
+      color: white;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-text {
+      color: lightskyblue;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .add-to-cart {
+      background-color: #4c90af;
+      color: #fff;
+      padding: 10px 0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .add-to-cart:hover {
+      background-color: #3e8e41;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgb(21, 16, 16);
+      color: white;
+      padding: 30px 20px;
+      margin-top: auto;
+    }
+
+    footer img {
+      width: 40px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+
+    footer p img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    footer ul li {
+      margin: 8px 0;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .footer-columns > div {
+      flex: 1 1 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+
+<div class="custom-nav d-flex flex-wrap align-items-center justify-content-between px-3 py-3">
+  <div class="d-flex align-items-center">
+    <span>myG</span>
+    <input type="search" class="form-control ms-3" placeholder="Search products" style="max-width: 400px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-heart" style="font-size:24px";></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-bars" style="font-size:24px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-bag-shopping" style="font-size:24px"></i>
+  </div>
+</div>
+
+ 
+
+  
+
+<!-- Product Navigation -->
+  <nav>
+    <div class="dropdown">
+      <button class="dropdown-button">Mobile Phones</button>
+      <div class="dropdown-content">
+        <a href="page1.html">Samsung</a>
+        <a href="page1.html">Apple</a>
+        <a href="#">Xiaomi</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">Bajaj EMI</button>
+      <div class="dropdown-content">
+        <a href="#">Apply Now</a>
+        <a href="#">Benefits</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">Tablets</button>
+      <div class="dropdown-content">
+        <a href="#">iPad</a>
+        <a href="#">Android</a>
+        <a href="#">Windows</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">Laptops</button>
+      <div class="dropdown-content">
+        <a href="#">Dell</a>
+        <a href="#">HP</a>
+        <a href="#">MacBook</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">TV</button>
+      <div class="dropdown-content">
+        <a href="#">Smart TVs</a>
+        <a href="#">LED</a>
+        <a href="#">QLED</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">Accessories</button>
+      <div class="dropdown-content">
+        <a href="#">Chargers</a>
+        <a href="#">Cables</a>
+        <a href="#">Covers</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">Home Appliances</button>
+      <div class="dropdown-content">
+        <a href="#">Refrigerators</a>
+        <a href="#">Washing Machines</a>
+        <a href="#">Microwaves</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">Air Conditioners</button>
+      <div class="dropdown-content">
+        <a href="#">Split AC</a>
+        <a href="#">Window AC</a>
+        <a href="#">Inverter AC</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropdown-button">Small Appliances</button>
+      <div class="dropdown-content">
+        <a href="#">Mixers</a>
+        <a href="#">Toasters</a>
+        <a href="#">Kettles</a>
+      </div>
+    </div>
+
+      <div class="dropdown">
+      <button class="dropdown-button">Personal care</button>
+      <div class="dropdown-content">
+        <a href="#">trimmers</a>
+        <a href="#">shavers</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Store Locator -->
+  <div class="store-locator">
+    <h1>Our Stores</h1>
+    <form>
+      <label for="location">City, State, ZIP</label>
+      <input type="text" id="location" placeholder="Enter a location">
+
+      <select id="distance">
+        <option value="10">10 kilometers</option>
+        <option value="20">20 kilometers</option>
+      </select>
+
+      <select id="sort-by">
+        <option value="position">Sort by: Position</option>
+        <option value="rating">Sort by: Rating</option>
+      </select>
+
+      <select id="role">
+        <option value="guest">Guest</option>
+        <option value="admin">Admin</option>
+        <option value="manager">Manager</option>
+      </select>
+
+      <br>
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+  </div>
+
+  <!-- Carousel -->
+  
+
+
+<div class="carousel-container">
+  <div class="image-track" id="imageTrack">
+    
+    <img src="images/myg1.jpg" alt="">
+    <img src="images/myg2.jpg" alt="">
+    <img src="images/myg3.jpg" alt="">
+    <img src="images/myg4.jpg" alt="">
+    <img src="images/myg6.jpg" alt="">
+    <img src="images/myg7.jpg" alt="">
+    <img src="images/myg8.jpg" alt="">
+    <img src="images/b.jpeg" alt="">
+
+  </div>
+</div>
+
+
+
+
+<script>
+  function autoScroll(trackId) {
+    const track = document.getElementById(trackId);
+    const imageWidth = 400;
+    let currentPosition = 0;
+
+    setInterval(() => {
+      const maxScroll = -(track.scrollWidth - imageWidth * 3);
+      currentPosition = (currentPosition > maxScroll) ? currentPosition - imageWidth : 0;
+      track.style.transform = `translateX(${currentPosition}px)`;
+    }, 3000);
+  }
+
+  autoScroll('imageTrack');
+</script>
+
+
+
+
+  <!-- Main Content -->
+  
+
+<div class="main-content d-flex flex-wrap">
+
+
+    <!-- Filter Section -->
+    <div class="filter-container">
+<div class="price-filter">
+    <h2>Price</h2>
+    <input type="range" min="700" max="201000" value="201000">
+  <span>700-201000</span>
+  </div>
+  <div class="brand-filter">
+    <div class="dropdown">
+      <button class="dropdown-button">BRAND</button>
+      <div class="dropdown-content">
+        <input type="checkbox" id="apple">
+  <label for="apple">Apple</label><br>
+  <input type="checkbox" id="carvaan">
+  <label for="carvaan">Carvaan</label><br>
+  <input type="checkbox" id="easyfone">
+  <label for="easyfone">Easyfone</label><br>
+  <input type="checkbox" id="google">
+  <label for="google">Google</label><br>
+  <input type="checkbox" id="hmd">
+  <label for="hmd">HMD</label><br>
+  <input type="checkbox" id="honor">
+  <label for="honor">Honor</label><br>
+  <input type="checkbox" id="itel">
+  <label for="itel">itel</label> 
+      </div>
+    </div>
+</div>
+  <div class="brand-filter">
+    <div class="dropdown">
+      <button class="dropdown-button">RAM</button>
+      <div class="dropdown-content">
+        <input type="checkbox" id="apple">
+  <label for="128">128 MB</label><br>
+  <input type="checkbox" id="128">
+  <label for="16">16 GB</label><br>
+  <input type="checkbox" id="16">
+  <label for="40">40 MB</label><br>
+  <input type="checkbox" id="40">
+  <label for="128G">128 GB</label><br>
+  <input type="checkbox" id="128G">
+  <label for="hmd">256 GB</label><br>
+  <input type="checkbox" id="256">
+      </div>
+    </div>
+</div>
+ <div class="brand-filter">
+    <div class="dropdown">
+      <button class="dropdown-button">Internal storage</button>
+      <div class="dropdown-content">
+        <input type="checkbox" id="apple">
+  <label for="128">128 MB</label><br>
+  <input type="checkbox" id="128">
+  <label for="16">16 GB</label><br>
+  <input type="checkbox" id="16">
+  <label for="40">40 MB</label><br>
+  <input type="checkbox" id="40">
+  <label for="128G">128 GB</label><br>
+  <input type="checkbox" id="128G">
+  <label for="hmd">256 GB</label><br>
+  <input type="checkbox" id="256">
+      </div>
+    </div>
+</div>
+ <div class="brand-filter">
+    <div class="dropdown">
+      <button class="dropdown-button">5G Available</button>
+      <div class="dropdown-content">
+        <input type="checkbox" id="apple">
+  <label for="NO">NO</label><br>
+  <input type="checkbox" id="NO">
+  <label for="YES">YES</label><br>
+  <input type="checkbox" id="YES">
+      </div>
+    </div>
+</div>
+  </div><br><br>
+
+
+    <!-- Cards Section -->
+<div class="product-section flex-grow-1">
+
+
+      <h2><center>Mobile Phones</center></h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="images/w1.jpg" alt="Product 1">
+          <div class="card-body">
+            <p class="card-text">Samsung 8kg Washing Machine</p>
+            <p>Rating: 5-star</p>
+            <p>Price: ₹45,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/w2.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">LG Automatic Machine</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/w3.jpg" alt="Product 3">
+          <div class="card-body">
+            <p class="card-text">Whirlpool 7kg Semi Auto</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹30,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+<div class="card">
+          <img src="images/washh.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Livpure sereno Ro</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹85,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+    <div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/aqua.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">AQUANEETA water purifier IRIS PLUS UV</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹65,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/ao.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">AO Smith Z2 Pro</p>
+            <p>Rating: 5-star</p>
+            <p>Price: ₹80,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/ao2.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">AO Smith P4 RO</p>
+            <p>Rating: 5-star</p>
+            <p>Price: ₹75,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/usha.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">USHA Water Dispenser</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/camp.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Crompton Classic vertical Water Heater</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹5,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div>
+<!--exclive offer-->
+
+  <div class="carousel-container">
+    <div class="image-trac" id="imageTrack1">
+      <img src="images/exc.jpg" alt="">
+    </div>
+  </div>
+
+
+<div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/w11.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">LG Fully Automatic </p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹27,000<h6>35,900</h6></p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/w22.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">panasonic fully automatic</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹20,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/w33.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">IFB EXCUTIVE pLUS</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/w44.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Haier Automatic Machine</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/w55.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BOSCH Automatic Machine</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+
+    <div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/w66.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BOSCH 7 Automatic Machine</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/w77.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">HAIER FULLY AUTOMATIC</p>
+            <p>Rating: 5-star</p>
+            <p>Price: ₹26,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/w88.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">WHIRLPOOL STAINWASH PRO</p>
+            <p>Rating: 5-star</p>
+            <p>Price: ₹18,460</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/w99.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Samsung Fully Automatic</p>
+            <p>Rating: 5-star</p>
+            <p>Price: ₹27,500</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/w10.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BOSCH FULLY AUTOMATIC</p>
+            <p>Rating: 5-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+<!--mixy-->
+
+  <div class="carousel-container">
+    <div class="image-trac" id="imageTrack1">
+      <img src="images/mix.jpg" alt="">
+    </div>
+  </div>
+
+
+  <div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/m111.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">IMPEX STEAMER</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/m222.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Preethi COCOSTA</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹4490</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/m33.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Preethi Zodiac</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹8,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/m44.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Usha Max Air</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/m55.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">mr.butler</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+
+    <div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/m66.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">mi xiaomi</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/m77.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">impex instah</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹1099</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/m88.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">sujata</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/m99.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">butler</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/m10.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">NOLTA</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+<!--laptop-->
+
+    <div class="carousel-container">
+    <div class="image-trac" id="imageTrack1">
+      <img src="images/lapt.jpg" alt="">
+    </div>
+  </div>
+<div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/l1.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">Asus</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/l4.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">AUS VIVOBOOK</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/l2.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">ASUS VIVOBOOK FLIP</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/l3.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">ASUS 15</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/l5.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">SAMSUNG GALAXY</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+
+
+    <!--Acc-->
+<div class="carousel-container">
+    <div class="image-trac" id="imageTrack1">
+      <img src="images/acc.jpg" alt="">
+    </div>
+  </div>
+
+<div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/a1.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BOAT ENGINE Z2O</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/a2.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">APPLE AIRPODS 4</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/a3.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BOAT NIRVANA</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/a4.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">APPLE MHJD3HN/A</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/a5.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">APPLE POWER BANK</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+
+    <div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/a66.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">SAMSUNG SOUND</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/a7.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">SOUND BOX</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/a8.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">SMART WATCH</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/a9.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">SAREGAMA CARVAAN</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/a10.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">AQER WIRELESS</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+
+    <!--Crock-->
+<div class="carousel-container">
+    <div class="image-trac" id="imageTrack1">
+      <img src="images/crock.jpg" alt="">
+    </div>
+  </div>
+
+<div class="product-section flex-grow-1">
+        <div class="card-container">
+    <div class="card">
+          <img src="images/c1.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BLUEBERRY 3</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/c2.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BIRIYANI POT</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+    <img src="images/c3.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">GADMY GREBLON</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/c6.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BLUEBERRY HOTPOT</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+         <div class="card">
+            <img src="images/c5.jpg" alt="Product 2">
+          <div class="card-body">
+            <p class="card-text">BLUEBERRY STAINLESS STEEL</p>
+            <p>Rating: 4-star</p>
+            <p>Price: ₹35,990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+</div>
+    </div><br>
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    
+
+    <div class="footer-columns">
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li>Shehana A</li>
+          <li>shehanaa56@gmail.com</li>
+          <li>9037258541</li>
+          <li>Calicut, Kerala</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Buyer's Account</h2>
+        <ul>
+          <li>Sign in</li>
+          <li>Orders</li>
+          <li>Wishlist</li>
+          <li>Comparison list</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Shop</h2>
+        <ul>
+          <li>Corporate</li>
+          <li>Blog</li>
+          <li>About Us</li>
+          <li>Store Locator</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
